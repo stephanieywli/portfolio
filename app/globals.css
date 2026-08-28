@@ -6,17 +6,6 @@
     opacity: 0.045;
 }
 
-#about-section-title {
-    display: flex;
-    flex-direction: row;
-    width: 10vw;
-    align-items: center;
-    justify-items: center;
-    text-transform: uppercase;
-    color: #f6f6f6;
-    white-space: nowrap;
-}
-
 body::-webkit-scrollbar {
     width: 0.5em;
   }

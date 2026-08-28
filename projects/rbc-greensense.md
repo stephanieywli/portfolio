@@ -1,5 +1,5 @@
 ---
-title: RBC GreenSense
+title: 🌲 RBC GreenSense
 subtitle: Get started with Next.js and React in seconds.
 links:
   [
@@ -10,13 +10,13 @@ links:
   ]
 details:
   [
-    { framework: "A-Frame, Unity" },
-    { industry: "Finance, AR" },
-    { libraries: "Three.js, PatrolJS" },
+    { industry: "Finance" },
+    { Technologies: "React Native, Three.js, Unity" },
+    { design: "figma, blender" },
   ]
 screens: ["/projects/rbc/1.svg", "/projects/rbc/2.svg"]
 
-hero: "/projects/rbc/main.svg"
+hero: "/projects/rbc/hero.png"
 ---
 
 Created with [Roneilla Bumanlag](https://roneilla.com/), [Mikaela Cotter](https://www.linkedin.com/in/mikaela-cotter-359487234/), and [Sofia Mazzotta](https://peachie5000.myportfolio.com/).

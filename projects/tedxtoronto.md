@@ -4,9 +4,11 @@ subtitle: Get started with Next.js and React in seconds.
 links: [{ launch: "https://www.tedxtoronto.com/" }]
 details:
   [
+    { Industry: "Arts, Entertainment, Information" },
+    { Use Case: "Virtual Event, CMS" },
     { Languages: "JavaScript, HTML, CSS" },
-    { Industry: "Ecommerce, Virtual Event, NPO" },
     { CMS: "Webflow" },
+    { Design: "Figma, Illustrator, PremierePro" },
   ]
 screens:
   [

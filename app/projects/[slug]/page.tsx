@@ -3,7 +3,6 @@ import fs from "fs";
 import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 import { projects } from "@/components/projects";
-import Arrow from "@/components/icons/arrow-black";
 import Image from "next/image";
 import Nav from "@/components/layout/navProjects";
 
@@ -43,8 +42,7 @@ export default function Page(props: any) {
                 target="_blank"
                 className="flex flex-row items-center hover:opacity-70 hover:italic"
               >
-                {Object.keys(link)}
-                <Arrow />
+                {Object.keys(link)} ⤴
               </a>
             ))}
           </div>

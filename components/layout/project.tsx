@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -25,52 +24,71 @@ const fadeIn = {
 
 export default function Project({ project }: any) {
   const [isActive, setIsActive] = useState(false);
-  const { title1, title2, src, type, details, slug } = project;
-  const lenis = useLenis(({ scroll }) => {});
+  const { title1, title2, src, details, slug } = project;
+  const lenis = useLenis();
 
   return (
-    <div
-      id="project"
-      className="flex flex-col w-[100%] items-center justify-between py-[0.8vw] cursor-pointer border-b leading-[10vh] sm:leading-[15vh]"
-    >
-      <Link
-        href={`/projects/${slug}`}
-        onClick={() => lenis.scrollTo("top", { lerp: 0.08, lock: true })}
-        className="flex flex-row items-center justify-start text-[2rem] sm:max-lg:text-[4rem] lg:max-4k:text-[6rem] 4k:text-[8.5rem]
-         hover:text-grey hover:font-light hover:italic hover:font-garamond hover:tracking-wide 
-         hover:text-[2.25rem] sm:max-lg:hover:text-[4.5rem] lg:max-4k:hover:text-[6.5rem] 4k:hover:text-[9rem]
-         "
-        onMouseEnter={() => {
-          setIsActive(true);
-        }}
-        onMouseLeave={() => {
-          setIsActive(false);
-        }}
+    <>
+      <div
+        id="project"
+        className="flex flex-col w-[100%] items-center justify-between cursor-pointer border-b"
       >
-        <p className="=text-[6rem]">{title1}</p>
+        <Link
+          href={`/projects/${slug}`}
+          onClick={() => lenis.scrollTo("top", { lerp: 0.08, lock: true })}
+          className="flex flex-row items-center justify-start text-[1rem] sm:max-lg:text-[1rem] lg:max-4k:text-[1.3rem] 4k:text-[2rem]
+         hover:text-grey hover:font-light hover:italic hover:font-garamond hover:tracking-wide 
+         hover:text-[1.1rem] sm:max-lg:hover:text-[1.1rem] lg:max-4k:hover:text-[1.5rem] 4k:hover:text-[2.3rem]
+         "
+          onMouseEnter={() => {
+            setIsActive(true);
+          }}
+          onMouseLeave={() => {
+            setIsActive(false);
+          }}
+        >
+          <p className="">{title1}</p>
+          <motion.div
+            variants={openImg}
+            animate={isActive ? "open" : "closed"}
+            className="mx-[0.05rem] sm:max-lg:mx-[0.1rem] lg:mx-[0.2rem]"
+          >
+            <Image
+              src={`${src}`}
+              alt=""
+              width={0}
+              height={0}
+              sizes="10vw"
+              style={{ width: "auto", height: "4vh" }}
+              className="py-2"
+            />
+          </motion.div>
+          <p className="">{title2}</p>
+        </Link>
         <motion.div
-          variants={openImg}
+          id="preview"
+          className="absolute left-0 -ml-[45vw] -z-10 "
+          variants={fadeIn}
           animate={isActive ? "open" : "closed"}
-          className="mx-[0.25rem] sm:max-lg:mx-[0.7rem] lg:mx-[1rem]"
         >
           <Image
             src={`${src}`}
             alt=""
             width={0}
             height={0}
-            sizes="10vw"
-            style={{ width: "auto", height: "10vh" }}
+            sizes="auto"
+            style={{ width: "35vw", height: "auto" }}
+            className="border-white my-2"
           />
         </motion.div>
-        <p className="">{title2}</p>
-      </Link>
-      <motion.div
-        className="flex flex-row w-[100%] self-center justify-center gap-2 tracking-wider absolute bottom-0 -my-[4rem] flex-nowrap text-nowrap leading-[1.1rem]"
-        variants={fadeIn}
-        animate={isActive ? "open" : "closed"}
-      >
-        <p className="place-self-center">{type}</p>•<p>{details}</p>
-      </motion.div>
-    </div>
+        <motion.div
+          className="absolute justify-center left-0 ml-[16vw] flex flex-row text-[0.9rem] py-[0.58rem] text-nowrap px-2" //appear beside project-name
+          variants={fadeIn}
+          animate={isActive ? "open" : "closed"}
+        >
+          {details}
+        </motion.div>
+      </div>
+    </>
   );
 }

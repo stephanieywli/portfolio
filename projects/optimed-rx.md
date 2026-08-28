@@ -1,6 +1,6 @@
 ---
-title: OptiMed RX
-subtitle: A web app that elevates your healthcare experience, connecting patients to pharmacists effortlessly.
+title: OptiMed RX⚕️
+subtitle: Instantly connect with Canadian-licensed pharmacists for personalised pharmaceutical opinions in your area of concern.
 links:
   [
     { github: "https://github.com/AmeerHamoodi/hackrx" },
@@ -10,9 +10,9 @@ links:
   ]
 details:
   [
-    { Frameworks: "NestJS, Next.js, Jest" },
     { Industry: "Healthcare" },
-    { CSS: "Typescript" },
+    { Technologies: "Next.js, Node.js, Typescript, Jest" },
+    { CSS: "Chakra UI" },
     { Database: "MySQL" },
     { Auth: "Auth0" },
   ]
@@ -24,7 +24,7 @@ screens:
     "/projects/rx/4.svg",
   ]
 
-hero: "/projects/rx/hero.svg"
+hero: "/projects/rx/hero.png"
 ---
 
 Created with Anthony Wong, [Ameer Hamoodi](https://www.linkedin.com/in/ameer-hamoodi-346889164/), and [Connie Drake](https://www.linkedin.com/in/connie-drake-7a4710245/).

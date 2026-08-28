@@ -1,15 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import Cursor from "@/components/layout/cursor";
 import Footer from "@/components/layout/footer";
 import Image from "next/image";
-import Link from "next/link";
+import Menu from "@/components/layout/menuLand";
 import Triangle from "@/components/icons/triangle";
+import ImageToggle from "@/components/icons/imageToggle";
 import { Typewriter } from "react-simple-typewriter";
 import Loader from "@/components/transitions/loader";
-import dynamic from "next/dynamic";
-import Head from "next/head";
-import { useLenis } from "@studio-freight/react-lenis";
+import { useState } from "react";
 
 const awards = [
   { title: "Awards" },
@@ -48,120 +46,113 @@ const skillsDev = [
   { tool: "Python" },
 ];
 const hobbies = [
-  { title: "r.n.b. listener" },
-  { title: "weightlifter" },
-  { title: "clothing thrifter" },
-  { title: "cat mother" },
-  { title: "mountain lover" },
-  { title: "whiskey drinker" },
-  { title: "published researcher" },
-  { title: "swimmer" },
-  { title: "neuroscience lover" },
-  { title: "grass-toucher" },
-  { title: "art admirer" },
+  { title: "cat mother (default)", src: "/about/default.png" },
+  { title: "weightlifter", src: "/about/gym.png" },
+  { title: "sunset lover", src: "/about/sunset.jpeg" },
+  { title: "mountain hiker", src: "/about/hike.png" },
+  { title: "globe trotter", src: "/about/2.png" },
+  { title: "clothing thrifter", src: "/about/thrift.jpeg" },
+  { title: "neuroscience grad", src: "/about/grad2.jpeg" },
+  { title: "art admirer", src: "/about/lacma.jpeg" },
+  { title: "grass-toucher", src: "/about/mountain.jpeg" },
+  { title: "lifelong swimmer", src: "/about/swim.png" },
 ];
 
-const Earth = dynamic(() => import("../../components/stylistic/earth"), {
-  ssr: false,
-
-  loading: () => (
-    <Image
-      src="/globe.svg"
-      alt=""
-      width={0}
-      height={0}
-      style={{ width: "auto", height: "100%", objectFit: "contain" }}
-    ></Image>
-  ),
-});
-
 export default function Page() {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 300);
-  }, []);
-
-  const lenis = useLenis(({ scroll }) => {});
-
+  const [src, setSrc] = useState("/about/default.png");
   return (
     <>
-      <Head>
-        <link rel="preload" href="/1.svg" as="image" />
-      </Head>
       <Loader />
       <div
         id="content"
-        className="w-screen h-auto min-h-screen min-w-screen max-w-[100%] overflow-hidden relative"
+        className="w-screen h-auto min-h-screen min-w-screen max-w-[100%] overflow-hidden"
       >
         <Cursor />
         <section
-          id="background-section"
+          id="about-section"
           className="flex flex-col lg:flex-row w-screen lg:h-screen 
-          pt-[20vh] pb-[10vh] px-4 4k:px-10 items-end justify-between"
+           px-4 4k:px-10 gap-10 justify-center relative"
         >
-          <div
-            id="1A"
-            className="flex flex-col lg:flex-row lg:w-[60vw] items-start gap-6 4k:gap-20  -red"
-          >
-            <div id="about-section-title" className="gap-2 4k:gap-4 ">
-              <Triangle />
-              <p>Background</p>
+          <div className="mt-10 flex flex-row gap-8 h-[50vh] sm:max-md:h-[45vh] md:max-lg:h-[50vh] lg:h-[55vh] self-center">
+            <div className="flex flex-col items-end self-center tracking-wide lowercase h-fit p-2">
+              <div className="w-full capitalize italic underline text-left leading-tight pb-4">
+                <p className="">Hover to swap</p>
+                <div className="flex flex-row gap-2 justify-end">
+                  character!
+                  <Image
+                    src="/icons/cursor.svg"
+                    alt=""
+                    width={0}
+                    height={0}
+                    sizes="auto"
+                    style={{
+                      width: "auto",
+                      height: "1rem",
+                    }}
+                    className="mt-1"
+                  ></Image>
+                </div>
+              </div>
+              {hobbies.map((hobby) => (
+                <p
+                  key={hobby.title}
+                  className="text-grey first-of-type:text-red hover:text-white hover:underline cursor-crosshair"
+                  onMouseEnter={() => {
+                    setSrc(hobby.src);
+                  }}
+                  onMouseLeave={() => {
+                    setSrc("/about/default.png");
+                  }}
+                >
+                  {hobby.title}
+                </p>
+              ))}
             </div>
-            <div className="flex flex-col justify-between w-fit lg:w-[40vw] h-full ">
-              <div
-                className="font-garamond font-light 
+            <ImageToggle src={src} />
+          </div>
+          <Menu />
+          <div className="mt-10 flex flex-col justify-between w-fit lg:w-[40vw] self-center mr-[235px] h-[50vh] sm:max-md:h-[45vh] md:h-fit">
+            <div
+              className="font-garamond font-light 
               text-[4.5rem] lg:max-2xl:text-[4rem] 2xl:max-3xl:text-[5.5rem] 3xl:text-[6.5rem]
               italic text-off-white leading-none -mt-4 lg:whitespace-nowrap"
-              >
-                <h1 className="max-w-fit">Designer by Instinct,</h1>
-                <h1 className="max-w-fit">Developer by Design.</h1>
+            >
+              <h1 className="max-w-fit hover:text-red">
+                Designer by Instinct,
+              </h1>
+              <h1 className="max-w-fit hover:text-red">Developer by Design.</h1>
+            </div>
+            <div className="flex flex-col lg:flex-row gap-6 pt-20 text-grey justify-between w-full h-max tracking-wide leading-snug">
+              <div className="flex flex-col justify-between italic">
+                <p className="hover:text-white">
+                  <Typewriter
+                    words={["Hons. Neuroscience (B.Sc.)"]}
+                    loop={0}
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={50}
+                    deleteSpeed={30}
+                    delaySpeed={2000}
+                  />
+                </p>
+                <div className="flex flex-col">
+                  {awards.map((award) => (
+                    <p key={award.title} className="hover:text-white">
+                      {award.title}
+                    </p>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-col lg:flex-row gap-6 pt-20 text-grey justify-between w-full h-max tracking-tight leading-snug">
-                <div className="flex flex-col justify-between italic">
-                  <p>
-                    <Typewriter
-                      words={["Hons. Neuroscience (B.Sc.)"]}
-                      loop={0}
-                      cursor
-                      cursorStyle="|"
-                      typeSpeed={50}
-                      deleteSpeed={30}
-                      delaySpeed={2000}
-                    />
-                  </p>
-                  <div className="flex flex-col">
-                    {awards.map((award) => (
-                      <p key={award.title}>{award.title}</p>
-                    ))}
-                  </div>
-                </div>
-                <div className="w-[50%] lg:w-[40%] h-full text-justify">
-                  A course about computational neuroscience and ML algorithms is
-                  what initially sparked my interest in software development in
-                  university. Since then I&#39;ve sought out any opportunity
-                  that allows me to dive deeper into the world of software
-                  design and development.
-                </div>
+              <div className="w-[50%] lg:w-[40%] h-full text-left hover:text-white">
+                A course about computational neuroscience and ML algorithms is
+                what initially sparked my interest in software development in
+                university. Since then I&#39;ve sought out any opportunity that
+                allows me to dive deeper into the world of software design and
+                development. Since then I&#39;ve sought out any opportunity that
+                allows me to dive deeper into the world of software design and
+                development.
               </div>
             </div>
-          </div>
-          <div
-            id="1B"
-            className="flex w-[55vw] sm:max-md:w-[45vw] md:max-lg:w-[40vw] lg:w-[25vw] items-end self-end justify-center relative sm:max-lg:mr-5 lg:max-xl:mr-10 xl:max-4k:mr-20 4k:mr-40"
-          >
-            <Image
-              src="/Profile8.webp"
-              alt=""
-              width={0}
-              height={0}
-              sizes="100%"
-              style={{ width: "100%", height: "auto", objectFit: "contain" }}
-              quality={100}
-              priority={true}
-              className="rounded-full -z-10 lg:-mb-6"
-            ></Image>
           </div>
         </section>
         <section
@@ -177,91 +168,40 @@ export default function Page() {
             <p className="">084</p>
             <p className="">c30</p>
           </div>
-          <div className="flex flex-col gap-6 4k:gap-20 lg:flex-row w-[100%] items-start justify-between h-fit ">
-            <div
-              id="about-section-title"
-              className="gap-2 4k:gap-4 w-[10vw] whitespace-nowrap "
-            >
-              <Triangle />
-              What I do
-            </div>
-            <div
-              className="flex flex-col w-[40vw] font-garamond font-light 
-            text-[4.5rem] lg:max-2xl:text-[4rem] 2xl:max-3xl:text-[5.5rem] 3xl:text-[6.5rem]
-            italic text-off-white leading-none -mt-4 "
-            >
+          <div className="flex flex-col gap-6 4k:gap-20 lg:flex-row w-[100%] items-start justify-between h-fit lg:px-20 ">
+            <div className="flex flex-col w-[40vw] leading-none -mt-4 ">
+              <div className="flex flex-row gap-2">
+                <Triangle />
+                <p className="uppercase text-grey">What I do</p>
+              </div>
               {roles.map((role) => (
-                <p key={role.title}>{role.title}</p>
+                <p
+                  key={role.title}
+                  className="font-garamond font-light 
+                text-[4.5rem] lg:max-2xl:text-[4rem] 2xl:max-3xl:text-[5.5rem] 3xl:text-[6.5rem]
+                italic hover:text-red hover:underline decoration-2 hover:underline-offset-4"
+                >
+                  {role.title}
+                </p>
               ))}
             </div>
-            <div className="flex flex-row lg:w-[45vw] self-end justify-end items-end gap-x-40 lg:pr-40 text-grey ">
+            <div className="flex flex-row lg:w-[45vw] self-end justify-end items-end gap-x-40 text-grey ">
               <div className="flex flex-col">
                 {skillsDes.map((skill) => (
-                  <p key={skill.tool}>{skill.tool}</p>
+                  <p key={skill.tool} className="hover:text-red">
+                    {skill.tool}
+                  </p>
                 ))}
               </div>
               <div className="flex flex-col">
                 {skillsDev.map((skill) => (
-                  <p key={skill.tool}>{skill.tool}</p>
+                  <p key={skill.tool} className="hover:text-red">
+                    {skill.tool}
+                  </p>
                 ))}
               </div>
             </div>
           </div>
-        </section>
-        <section
-          id="personal-section"
-          className="flex flex-row h-screen w-screen min-w-screen min-h-screen lg:h-screen px-4 4k:px-10 py-[20vh] relative  "
-        >
-          <div className="flex flex-col gap-6 4k:gap-20 lg:flex-row w-full h-full justify-between items-start">
-            <div className="flex flex-col gap-6 4k:gap-20 lg:flex-row w-fit h-full justify-start items-start ">
-              <div
-                id="about-section-title"
-                className="gap-2 4k:gap-4 whitespace-nowrap "
-              >
-                <Triangle />
-                ME
-              </div>
-              <div className="flex flex-col justify-between lg:w-fit h-full ">
-                <div
-                  className="max-w-fit font-garamond font-light
-                text-[4.5rem] lg:max-2xl:text-[4rem] 2xl:max-3xl:text-[5.5rem] 3xl:text-[6.5rem]
-                italic text-off-white leading-none -mt-4 capitalize"
-                >
-                  In my spare time
-                </div>
-                <div className="flex flex-row justify-end sm:justify-between gap-10 w-full h-fit leading-snug text-grey">
-                  <div className="flex flex-col italic">
-                    Simple Pleasures...
-                  </div>
-                  <div className="flex flex-col lowercase">
-                    {hobbies.map((hobby) => (
-                      <p key={hobby.title}>{hobby.title}</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className=" absolute right-0 -z-10 lg:static flex lg:h-full w-full lg:w-[50vw] items-center justify-center ">
-              <Earth />
-            </div>
-          </div>
-        </section>
-        <section className="flex min-h-[70vh] items-center justify-center  text-grey italic">
-          <Link
-            href=""
-            className="-mt-60 text-right hover:opacity-70"
-            onClick={() => lenis.scrollTo("bottom", { lerp: 0.1, lock: true })}
-          >
-            <Typewriter
-              words={["Interested in working together?"]}
-              loop={0}
-              cursor
-              cursorStyle=""
-              typeSpeed={50}
-              deleteSpeed={30}
-              delaySpeed={2000}
-            />
-          </Link>
         </section>
       </div>
       <Footer />
