@@ -3,8 +3,6 @@ import { Atkinson_Hyperlegible_Mono } from "next/font/google";
 
 import "./globals.css";
 
-import AsciiFlower from "@/components/layout/asciiFlower";
-
 const metadata: Metadata = {
   title: "Stephanie Li",
   description:
@@ -35,7 +33,6 @@ export default function RootLayout({
       <body
         className={`${mono.variable} bg-off-white font-mono text-black text-[0.9rem] sm:max-4k:text-[1.1rem] 4k:text-[1.65rem] antialiased select-none overscroll-none overflow-x-hidden relative`}
       >
-        <AsciiFlower />
         {children}
       </body>
     </html>
