@@ -3,7 +3,7 @@ import Link from "next/link";
 export const Home = () => (
   <>
     {" "}
-    <p className="text-sm uppercase bg-black w-fit text-off-white px-1 font-semibold mb-2">
+    <p className="text-sm uppercas bg-black uppercase w-fit text-off-white px-1 font-semibold mb-2">
       stephanie li
     </p>
     <p className="text-sm">
@@ -11,13 +11,13 @@ export const Home = () => (
       mom
     </p>
     <p className="text-sm">
-      <b className="font-semibold">main proficiencies:</b> typescript, python,
-      react, sql
+      <b className="font-semibold">main proficiencies:</b> typescript, react,
+      python, sql
     </p>{" "}
-    {/* <p className="text-sm">
-      <b className="font-semibold">recent interests:</b> ???
-    </p> */}
     <p className="text-sm">
+      <b className="font-semibold">loves:</b> nature, product design, gym
+    </p>
+    <p className="text-sm mt-3">
       <b className="font-semibold">born and based in:</b> toronto, CA
     </p>{" "}
     <p className="text-sm font-semibold">

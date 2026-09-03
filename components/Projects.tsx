@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const projects = [
   {
@@ -32,7 +34,8 @@ const projects = [
     year: 2025,
     feeling: "solo-flying",
     title: "'Open By Default' Processor Frontend",
-    description: "solo-built internal CRUD processor for Canadian ATIP records",
+    description:
+      "internal CRUD processor for Canadian ATIP records; solo-built",
     toast: "private property",
     toastBg: "bg-red-500",
   },
@@ -74,9 +77,13 @@ export const Projects = () => {
               <Link
                 href={link}
                 target="_blank"
-                className="font-semibold text-sm text-black"
+                className="font-semibold text-sm "
               >
                 {title}
+                <FontAwesomeIcon
+                  icon={faArrowUpRightFromSquare}
+                  className="ml-1 mb-px"
+                />
               </Link>
             ) : (
               <p

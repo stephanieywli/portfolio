@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible_Mono } from "next/font/google";
+import { Footer } from "@/components/Footer";
 
 import "./globals.css";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Stephanie Li",
-  description:
-    "Personal portfolio created by Stephanie Li. Powered by Next.js, Typescript, and Tailwind CSS.",
-  creator: "Stephane Li",
+  description: "a portfolio by Stephanie Li",
+  creator: "Stephanie Li",
   formatDetection: {
     email: false,
     address: false,
@@ -29,11 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${mono.variable} bg-off-white font-mono text-black text-[0.9rem] sm:max-4k:text-[1.1rem] 4k:text-[1.65rem] antialiased select-none overscroll-none overflow-x-hidden relative`}
+        className={`${mono.variable} bg-off-white font-mono text-black text-[0.9rem] sm:max-4k:text-[1.1rem] 4k:text-[1.65rem] overscroll-none overflow-x-hidden relative`}
+        suppressHydrationWarning
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
