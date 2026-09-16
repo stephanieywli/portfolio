@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 import "./globals.css";
 
@@ -31,9 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${mono.variable} bg-off-white font-mono text-black text-[0.9rem] sm:max-4k:text-[1.1rem] 4k:text-[1.65rem] overscroll-none overflow-x-hidden relative`}
+        className={`${mono.variable} bg-off-white font-mono text-ink text-[0.9rem] sm:max-4k:text-[1.1rem] 4k:text-[1.65rem] overscroll-none overflow-x-hidden relative`}
         suppressHydrationWarning
       >
+        <Header />
         {children}
         <Footer />
       </body>
