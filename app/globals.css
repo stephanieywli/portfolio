@@ -1,31 +1,106 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-.bg-hero-pattern {
-    opacity: 0.045;
+@theme {
+  --breakpoint-4k: 2200px;
+  --color-off-white: #f4f0e8;
+  --color-ink: #000000;
+  --color-linen-card: #faf8f4;
+  --color-ink-muted: color-mix(
+    in oklab,
+    var(--color-off-white) 55%,
+    var(--color-ink) 45%
+  ); /* custom blend of canvas and ink */
+  --color-accent-blue: #0284c7;
+  --color-accent-blue-hover: #0369a1;
+  --color-accent: #d4211a;
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-#about-section-title {
-    display: flex;
-    flex-direction: row;
-    width: 10vw;
-    align-items: center;
-    justify-items: center;
-    text-transform: uppercase;
-    color: #f6f6f6;
-    white-space: nowrap;
+@layer base {
+  h1 {
+    @apply text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-3xl font-bold;
+  }
+
+  h4 {
+    @apply text-2xl font-bold;
+  }
+
+  h5 {
+    @apply text-xl font-bold;
+  }
+
+  h6 {
+    @apply text-base font-bold uppercase;
+  }
+
+  p {
+    @apply text-base;
+  }
+
+  a {
+    @apply text-base hover:opacity-80 hover:underline text-accent-blue hover:text-accent-blue-hover;
+  }
 }
 
-body::-webkit-scrollbar {
-    width: 0.5em;
+@layer utilities {
+  .skill-pill {
+    display: inline-block;
+    cursor: default;
+    border-radius: 10px;
   }
-   
-body::-webkit-scrollbar-track {
-    background-color: #0b2e212a;
+
+  @media (min-width: 640px) {
+    .skill-pill {
+      padding: 0 6px;
+      transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+    }
+
+    .skill-pill:hover {
+      background-color: var(--color-ink);
+      color: var(--color-off-white);
+    }
   }
-   
-  body::-webkit-scrollbar-thumb {
-    background-color: #0b2e2172;
-    border-radius: 40px;
+
+  .fade-up-item {
+    opacity: 0;
+    animation: var(--animate-fade-up);
   }
+
+  .delay-1 {
+    animation-delay: 80ms;
+  }
+  .delay-2 {
+    animation-delay: 160ms;
+  }
+  .delay-3 {
+    animation-delay: 240ms;
+  }
+  .delay-4 {
+    animation-delay: 320ms;
+  }
+  .delay-5 {
+    animation-delay: 400ms;
+  }
+}
+
+/* Page transition */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
