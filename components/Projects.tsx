@@ -4,49 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-
-const projects = [
-  {
-    year: 2026,
-    feeling: "challenging",
-    title: "Entity Resolution Database",
-    description:
-      "a database of standardized company data and entities; aggregates lobbying, procurement, and ATIP records",
-    toast: "coming soon",
-    toastBg: "bg-orange-500",
-  },
-  {
-    year: 2026,
-    feeling: "creative",
-    title: "Odyssey",
-    description: "a space-themed progress tracker for your job-hunt adventures",
-    toast: "under construction",
-    toastBg: "bg-yellow-300",
-  },
-  {
-    year: 2025,
-    feeling: "painstaking",
-    title: "Canadian Appointments Database",
-    description: "Canada's largest public database of government appointments",
-    link: "https://theijf.org/appointments",
-  },
-  {
-    year: 2025,
-    feeling: "solo-flying",
-    title: "'Open By Default' Processor Frontend",
-    description:
-      "internal CRUD processor for Canadian ATIP records; solo-built",
-    toast: "private property",
-    toastBg: "bg-red-500",
-  },
-  {
-    year: 2024,
-    feeling: "nostalgic",
-    title: "stephaniey.li",
-    description: "take a trip down memory lane...",
-    link: "https://portfolio-24-git-main-stephanieywli.vercel.app/",
-  },
-];
+import { Label } from "@/components/Label";
+import { PROJECTS } from "@/lib/projects";
 
 type TooltipState = { text: string; bg: string; x: number; y: number };
 
@@ -54,30 +13,58 @@ export const Projects = () => {
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-5">
       {tooltip && (
         <div
-          className={`fixed z-50 pointer-events-none ${tooltip.bg} text-black text-xs font-semibold px-2 py-1 whitespace-nowrap`}
+          className={`fixed z-50 pointer-events-none ${tooltip.bg} text-ink text-xs font-semibold px-2 py-1 whitespace-nowrap`}
           style={{
             left: tooltip.x,
             top: tooltip.y,
-            transform: "translate(-50%, calc(-100% - 10px))",
-          }}
+            transform: "translate(-50%, -50%)",
+          }} // center tooltip to cursor
         >
           {tooltip.text}
         </div>
       )}
-      {projects.map(
-        ({ title, description, year, feeling, toast, toastBg, link }) => (
-          <div key={title}>
-            <p className="text-xs bg-black w-fit text-off-white px-1 font-semibold my-1">
-              ({feeling})
-            </p>
+      {PROJECTS.map(
+        (
+          { title, description, year, feeling, toast, toastBg, link, stack },
+          i,
+        ) => (
+          <div
+            key={title}
+            className={`fade-up-item delay-${i + 1} ${toast ? "cursor-none" : ""}`}
+            onMouseEnter={(e) =>
+              toast &&
+              setTooltip({
+                text: toast,
+                bg: toastBg ?? "bg-ink",
+                x: e.clientX,
+                y: e.clientY,
+              })
+            }
+            onMouseMove={(e) =>
+              toast &&
+              setTooltip({
+                text: toast,
+                bg: toastBg ?? "bg-ink",
+                x: e.clientX,
+                y: e.clientY,
+              })
+            }
+            onMouseLeave={() => setTooltip(null)}
+          >
+            <div className="flex items-center gap-2 my-1">
+              <Label>({feeling})</Label>
+              <span className="text-[10px] text-ink/50 uppercase tracking-wider border border-ink/20 px-1.5 py-0.5 rounded-sm">
+                {stack}
+              </span>
+            </div>
             {link ? (
               <Link
                 href={link}
                 target="_blank"
-                className="font-semibold text-sm "
+                className="font-semibold text-sm"
               >
                 {title}
                 <FontAwesomeIcon
@@ -86,30 +73,7 @@ export const Projects = () => {
                 />
               </Link>
             ) : (
-              <p
-                className="font-semibold text-sm w-fit cursor-help"
-                onMouseEnter={(e) =>
-                  toast &&
-                  setTooltip({
-                    text: toast,
-                    bg: toastBg ?? "bg-yellow-300",
-                    x: e.clientX,
-                    y: e.clientY,
-                  })
-                }
-                onMouseMove={(e) =>
-                  toast &&
-                  setTooltip({
-                    text: toast,
-                    bg: toastBg ?? "bg-yellow-300",
-                    x: e.clientX,
-                    y: e.clientY,
-                  })
-                }
-                onMouseLeave={() => setTooltip(null)}
-              >
-                {title}
-              </p>
+              <p className="font-semibold text-sm w-fit">{title}</p>
             )}
             <p className="text-sm">{description}</p>
           </div>
