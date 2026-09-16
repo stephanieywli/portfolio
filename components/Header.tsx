@@ -21,7 +21,13 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className="mx-6 py-4 flex justify-start md:justify-end items-center text-xs tracking-wider text-ink-muted border-b border-ink/10 md:border-b-0">
+    <header className="mx-6 py-4 flex justify-between items-center text-xs tracking-wider text-ink-muted border-b border-ink/10 md:border-b-0">
+      <button
+        onClick={() => window.location.reload()}
+        className="text-sm hover:no-underline cursor-pointer text-accent font-mono border px-0.75 hover:text-off-white hover:bg-accent"
+      >
+        李
+      </button>
       <div className="text-[11px] font-mono tracking-tight tabular-nums">
         {time ? `TORONTO · ${time} · UTC-05:00` : " "}
       </div>
