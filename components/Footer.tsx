@@ -11,12 +11,12 @@ export const Footer = () => {
       </div>
       <nav
         aria-label="Resume and social links"
-        className="grid grid-cols-2 gap-2 min-[410px]:flex min-[410px]:items-center min-[410px]:gap-5 text-[0.6rem]"
+        className="grid grid-cols-2 gap-2 min-[410px]:flex min-[410px]:items-center min-[410px]:gap-5"
       >
         <Link
           href={RESUME_LINK.href}
           download={RESUME_LINK.download}
-          className="text-sm text-ink-muted hover:text-ink hover:no-underline hover:opacity-100 transition-colors"
+          className="text-sm max-sm:text-[0.7rem] text-ink-muted hover:text-ink hover:no-underline hover:opacity-100 transition-colors"
         >
           {RESUME_LINK.label} ↓
         </Link>
@@ -26,7 +26,7 @@ export const Footer = () => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-ink-muted hover:text-ink hover:no-underline hover:opacity-100 transition-colors"
+            className="text-sm max-sm:text-[0.7rem] text-ink-muted hover:text-ink hover:no-underline hover:opacity-100 transition-colors"
           >
             {label} ↗
           </Link>

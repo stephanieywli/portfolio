@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="text-[0.9rem] sm:max-4k:text-[1.1rem] 4k:text-[1.7rem]"
+      className="text-[1.3rem] sm:max-4k:text-[1.1rem] 4k:text-[1.7rem]"
       suppressHydrationWarning
     >
       <body
