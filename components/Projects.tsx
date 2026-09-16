@@ -56,7 +56,7 @@ export const Projects = () => {
           >
             <div className="flex items-center gap-2 my-1">
               <Label>({feeling})</Label>
-              <span className="text-[10px] text-ink/50 uppercase tracking-wider border border-ink/20 px-1.5 py-0.5 rounded-sm">
+              <span className="text-[0.6rem] text-ink/50 uppercase tracking-wider border border-ink/20 px-1.5 py-0.5 rounded-sm">
                 {stack}
               </span>
             </div>

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-4k: 2200px;
   --color-off-white: #f4f0e8;
   --color-ink: #000000;
   --color-linen-card: #faf8f4;

@@ -72,15 +72,15 @@ export default function HomePage() {
           </div>
           <div
             id="keyboard-guide"
-            className="hidden sm:flex mt-8 pt-4 border-t border-ink/10 sm:flex-row sm:items-center gap-1 sm:justify-between text-[11px] text-ink-muted w-full"
+            className="hidden sm:flex mt-8 pt-4 border-t border-ink/10 sm:flex-row sm:items-center gap-1 sm:justify-between text-[0.7rem] text-ink-muted w-full"
           >
             <span>
               press{" "}
-              <kbd className="px-1.5 py-0.5 bg-ink/5 border border-ink/20 rounded text-[10px] font-semibold">
+              <kbd className="px-1.5 py-0.5 bg-ink/5 border border-ink/20 rounded text-[0.6rem] font-semibold">
                 1
               </kbd>
               –
-              <kbd className="px-1.5 py-0.5 bg-ink/5 border border-ink/20 rounded text-[10px] font-semibold">
+              <kbd className="px-1.5 py-0.5 bg-ink/5 border border-ink/20 rounded text-[0.6rem] font-semibold">
                 4
               </kbd>{" "}
               to jump views

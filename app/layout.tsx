@@ -30,9 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="text-[0.9rem] sm:max-4k:text-[1.1rem] 4k:text-[1.7rem]"
+      suppressHydrationWarning
+    >
       <body
-        className={`${mono.variable} bg-off-white font-mono text-ink text-[0.9rem] sm:max-4k:text-[1.1rem] 4k:text-[1.65rem] overscroll-none overflow-x-hidden relative`}
+        className={`${mono.variable} bg-off-white font-mono text-ink overscroll-none overflow-x-hidden relative`}
         suppressHydrationWarning
       >
         <Header />

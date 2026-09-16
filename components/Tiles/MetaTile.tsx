@@ -7,7 +7,7 @@ type MetaTileProps = {
 export const MetaTile = ({ label, value, onClick }: MetaTileProps) => {
   const content = (
     <>
-      <span className="text-[10px] text-ink-muted uppercase tracking-wider">
+      <span className="text-[0.6rem] text-ink-muted uppercase tracking-wider">
         {label}
       </span>
       <span className="text-xs font-bold">{value}</span>

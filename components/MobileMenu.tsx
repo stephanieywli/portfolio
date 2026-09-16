@@ -17,7 +17,7 @@ export const MobileMenu = ({ selected, onSelect }: MobileMenuProps) => (
     aria-label="Mobile navigation menu"
     className="md:hidden w-full pb-3 mb-6 border-b border-ink/10 flex flex-col gap-2.5"
   >
-    <div className="flex items-center justify-start text-[10px] text-ink-muted tracking-wider uppercase">
+    <div className="flex items-center justify-start text-[0.6rem] text-ink-muted tracking-wider uppercase">
       <span>directory ↴</span>
     </div>
     <div className="flex items-center justify-between text-xs font-mono tracking-tight">
