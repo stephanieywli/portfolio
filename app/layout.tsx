@@ -36,7 +36,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className={`${mono.variable} bg-off-white font-mono text-ink overscroll-none overflow-x-hidden relative`}
+        className={`${mono.variable} bg-off-white font-mono text-ink overscroll-none overflow-x-hidden relative flex flex-col min-h-dvh`}
         suppressHydrationWarning
       >
         <Header />

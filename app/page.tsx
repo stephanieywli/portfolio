@@ -55,7 +55,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="w-full h-auto min-h-screen min-w-full max-w-full overflow-hidden relative flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center p-6 pt-4 md:p-12 md:py-0">
+      <div className="w-full h-auto flex-1 min-w-full max-w-full overflow-hidden relative flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center p-6 pt-4 md:p-12 md:py-0">
         <MobileMenu selected={selected} onSelect={setSelected} />
         <Menu selected={selected} onSelect={setSelected} />{" "}
         <div
