@@ -1,1 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# stephanie li — portfolio
+
+Personal portfolio site, built as a SPA with two key themes in mind: simplicity, and charm. Last updated September 2026.
+
+## Stack
+
+- [Next.js](https://nextjs.org/) (App Router) + React
+- TypeScript
+- Tailwind CSS v4
+- Font Awesome (icons)

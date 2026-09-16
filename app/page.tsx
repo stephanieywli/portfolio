@@ -60,7 +60,7 @@ export default function HomePage() {
         <Menu selected={selected} onSelect={setSelected} />{" "}
         <div
           id="page-component"
-          className="flex flex-col items-start md:ml-6 md:mb-10 md:w-135"
+          className="flex flex-col items-start md:ml-6 md:mb-10 md:w-135 max-sm:[--text-sm:0.75rem]"
         >
           <div
             className={`flex flex-col items-start transition-opacity duration-200 ease-in-out ${
