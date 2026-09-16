@@ -11,6 +11,7 @@
   ); /* custom blend of canvas and ink */
   --color-accent-blue: #0284c7;
   --color-accent-blue-hover: #0369a1;
+  --color-accent: #ff4d2e;
   --animate-fade-up: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 

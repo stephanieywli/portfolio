@@ -16,6 +16,7 @@ export const Home = () => {
         <p className="text-sm bg-ink uppercase w-fit text-off-white px-1 font-semibold">
           stephanie li
         </p>
+        <p className="text-sm text-accent font-mono md:hidden">[李]</p>
       </div>
       <p className="fade-up-item delay-1 text-sm">
         <b className="font-semibold">in summary:</b> a software developer &{" "}

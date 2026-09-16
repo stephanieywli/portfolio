@@ -30,7 +30,7 @@ export const MobileMenu = ({ selected, onSelect }: MobileMenuProps) => (
               onClick={() => onSelect(page)}
               className={
                 isSelected
-                  ? "font-bold text-ink"
+                  ? "font-bold text-accent"
                   : "text-ink/60 hover:text-ink transition-colors hover:cursor-pointer"
               }
             >
