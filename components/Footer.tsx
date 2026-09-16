@@ -1,10 +1,5 @@
 import Link from "next/link";
-
-const links = [
-  { label: "github", href: "https://github.com/stephanieywli" },
-  { label: "linkedin", href: "https://www.linkedin.com/in/stephanieywli/" },
-  { label: "email", href: "mailto:stephanieyw.li@gmail.com" },
-];
+import { RESUME_LINK, SOCIAL_LINKS } from "@/lib/links";
 
 export const Footer = () => {
   return (
@@ -19,13 +14,13 @@ export const Footer = () => {
         className="flex items-center gap-5 text-[9px]"
       >
         <Link
-          href="/resume.pdf"
-          download="Stephanie_Li_Resume.pdf"
+          href={RESUME_LINK.href}
+          download={RESUME_LINK.download}
           className="text-sm text-ink-muted hover:text-ink hover:no-underline hover:opacity-100 transition-colors"
         >
-          resume ↓
+          {RESUME_LINK.label} ↓
         </Link>
-        {links.map(({ label, href }) => (
+        {SOCIAL_LINKS.map(({ label, href }) => (
           <Link
             key={label}
             href={href}

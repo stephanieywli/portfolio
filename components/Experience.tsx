@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Label } from "@/components/Label";
 
 const experiences = [
   {
@@ -25,13 +26,11 @@ const experiences = [
 ];
 
 export const Experience = () => (
-  <div className="flex flex-col gap-2">
-    {experiences.map(({ company, role, link, description, industry }) => (
-      <div key={company}>
+  <div className="flex flex-col gap-5">
+    {experiences.map(({ company, role, link, description, industry }, i) => (
+      <div key={company} className={`fade-up-item delay-${i + 1}`}>
         {" "}
-        <p className="text-xs bg-black w-fit text-off-white px-1 font-semibold my-1">
-          ({industry})
-        </p>
+        <Label className="my-1">({industry})</Label>
         <div className="flex flex-row gap-1 items-center mb-0.5">
           <p className="font-semibold text-sm">
             {role} @{" "}
