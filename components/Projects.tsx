@@ -54,7 +54,7 @@ export const Projects = () => {
             }
             onMouseLeave={() => setTooltip(null)}
           >
-            <div className="flex items-center gap-2 my-1">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-2 my-1">
               <Label>({feeling})</Label>
               <span className="text-[0.6rem] text-ink/50 uppercase tracking-wider border border-ink/20 px-1.5 py-0.5 rounded-sm">
                 {stack}
