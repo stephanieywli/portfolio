@@ -52,16 +52,21 @@
   .skill-pill {
     display: inline-block;
     cursor: default;
-    padding: 0 6px;
     border-radius: 10px;
-    transition:
-      background-color 0.15s ease,
-      color 0.15s ease;
   }
 
-  .skill-pill:hover {
-    background-color: var(--color-ink);
-    color: var(--color-off-white);
+  @media (min-width: 640px) {
+    .skill-pill {
+      padding: 0 6px;
+      transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+    }
+
+    .skill-pill:hover {
+      background-color: var(--color-ink);
+      color: var(--color-off-white);
+    }
   }
 
   .fade-up-item {

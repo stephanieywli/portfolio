@@ -16,7 +16,7 @@ export const Projects = () => {
     <div className="flex flex-col gap-5">
       {tooltip && (
         <div
-          className={`fixed z-50 pointer-events-none ${tooltip.bg} text-ink text-xs font-semibold px-2 py-1 whitespace-nowrap`}
+          className={`hidden md:block fixed z-50 pointer-events-none ${tooltip.bg} text-ink text-xs font-semibold px-2 py-1 whitespace-nowrap`}
           style={{
             left: tooltip.x,
             top: tooltip.y,
@@ -33,7 +33,7 @@ export const Projects = () => {
         ) => (
           <div
             key={title}
-            className={`fade-up-item delay-${i + 1} ${toast ? "cursor-none" : ""}`}
+            className={`fade-up-item delay-${i + 1} ${toast ? "md:cursor-none" : ""}`}
             onMouseEnter={(e) =>
               toast &&
               setTooltip({

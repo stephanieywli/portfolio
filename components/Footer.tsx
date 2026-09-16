@@ -3,7 +3,7 @@ import { RESUME_LINK, SOCIAL_LINKS } from "@/lib/links";
 
 export const Footer = () => {
   return (
-    <footer className="w-full px-6 md:px-12 pb-6 flex flex-col sm:flex-row justify-between items-center text-xs tracking-wide text-ink-muted gap-3">
+    <footer className="mx-6 md:mx-12 mt-6 sm:mt-0 pb-6 pt-4 border-t border-ink/10 sm:border-t-0 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs tracking-wide text-ink-muted gap-3">
       <div className="flex items-center gap-2">
         <span className="font-bold text-ink tracking-tighter">SL</span>
         <span className="text-ink/30">/</span>
@@ -11,7 +11,7 @@ export const Footer = () => {
       </div>
       <nav
         aria-label="Resume and social links"
-        className="flex items-center gap-5 text-[9px]"
+        className="grid grid-cols-2 gap-2 min-[410px]:flex min-[410px]:items-center min-[410px]:gap-5 text-[9px]"
       >
         <Link
           href={RESUME_LINK.href}

@@ -21,7 +21,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className="w-full px-6 md:px-12 pt-6 flex justify-end items-center text-xs tracking-wider text-ink-muted">
+    <header className="mx-6 py-4 flex justify-start md:justify-end items-center text-xs tracking-wider text-ink-muted border-b border-ink/10 md:border-b-0">
       <div className="text-[11px] font-mono tracking-tight tabular-nums">
         {time ? `TORONTO · ${time} · UTC-05:00` : " "}
       </div>

@@ -8,7 +8,7 @@ type MenuProps = {
 };
 
 export const Menu = ({ selected, onSelect }: MenuProps) => (
-  <div className="group relative w-fit mb-12 md:-translate-y-8">
+  <div className="hidden md:block group relative w-fit mb-12 md:-translate-y-8">
     <div className="border absolute w-full h-full left-1.5 top-1.5 -z-10 border-ink bg-off-white opacity-40 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
     <div className="flex flex-col gap-1 items-center border p-4 relative bg-off-white transition-transform duration-300 ease-out group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
       ⤵
@@ -25,9 +25,7 @@ export const Menu = ({ selected, onSelect }: MenuProps) => (
             }`}
           >
             {isSelected ? (
-              <span className="border-b border-dotted border-ink">
-                {page}
-              </span>
+              <span className="border-b border-dotted border-ink">{page}</span>
             ) : (
               page
             )}

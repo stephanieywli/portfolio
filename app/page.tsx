@@ -5,6 +5,7 @@ import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
 import { More } from "@/components/More";
 import { Menu, type View } from "@/components/Menu";
+import { MobileMenu } from "@/components/MobileMenu";
 
 const FADE_MS = 200;
 const KEY_TO_PAGE: Record<string, View> = {
@@ -54,7 +55,8 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="w-screen h-auto min-h-screen min-w-screen max-w-full overflow-hidden relative flex flex-col md:flex-row items-center justify-start md:justify-center p-6 md:p-12 md:py-0">
+      <div className="w-full h-auto min-h-screen min-w-full max-w-full overflow-hidden relative flex flex-col md:flex-row items-start md:items-center justify-start md:justify-center p-6 pt-4 md:p-12 md:py-0">
+        <MobileMenu selected={selected} onSelect={setSelected} />
         <Menu selected={selected} onSelect={setSelected} />{" "}
         <div
           id="page-component"
@@ -70,7 +72,7 @@ export default function HomePage() {
           </div>
           <div
             id="keyboard-guide"
-            className="mt-8 pt-4 border-t border-ink/10 flex flex-col sm:flex-row sm:items-center gap-1 sm:justify-between text-[11px] text-ink-muted w-full"
+            className="hidden sm:flex mt-8 pt-4 border-t border-ink/10 sm:flex-row sm:items-center gap-1 sm:justify-between text-[11px] text-ink-muted w-full"
           >
             <span>
               press{" "}
