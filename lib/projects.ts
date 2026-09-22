@@ -13,12 +13,11 @@ export const PROJECTS: Project[] = [
   {
     year: 2026,
     feeling: "challenging",
-    title: "Entity Resolution Database",
+    title: "Paper Trail",
     description:
-      "a database of standardized company data and entities; aggregates lobbying, procurement, and ATIP records",
-    toast: "coming soon",
-    toastBg: "bg-orange-500",
-    stack: "SQL · Supabase · Next.js",
+      "a database that uses AI & human review to standardize company names; trace an org's lobbying and contract activity here",
+    link: "https://theijf.org/paper-trail",
+    stack: "Next.js · Python · SentenceBERT · SQL",
   },
   {
     year: 2026,
@@ -27,7 +26,7 @@ export const PROJECTS: Project[] = [
     description: "a space-themed progress tracker for your job-hunt adventures",
     toast: "under construction",
     toastBg: "bg-yellow-300",
-    stack: "Next.js · Tailwind · Shadcn",
+    stack: "Next.js · Typescript · Tailwind · Shadcn",
   },
   {
     year: 2025,
@@ -35,7 +34,7 @@ export const PROJECTS: Project[] = [
     title: "Canadian Appointments Database",
     description: "Canada's largest public database of government appointments",
     link: "https://theijf.org/appointments",
-    stack: "Python · AWS · Azure OpenAI · Docker",
+    stack: "Python · Playwright · Azure GPT-4o · Supabase",
   },
   {
     year: 2025,
@@ -45,7 +44,7 @@ export const PROJECTS: Project[] = [
       "internal CRUD processor for Canadian ATIP records; first solo-built frontend",
     toast: "private property",
     toastBg: "bg-red-500",
-    stack: "Next.js · FastAPI · Docker",
+    stack: "Next.js · Typescript · FastAPI · S3",
   },
   {
     year: 2024,
@@ -53,6 +52,6 @@ export const PROJECTS: Project[] = [
     title: "stephaniey.li",
     description: "take a trip down memory lane...",
     link: "https://portfolio-24-git-main-stephanieywli.vercel.app/",
-    stack: "Next.js · Tailwind · Figma",
+    stack: "Next.js · Typescript · Tailwind · Figma",
   },
 ];
