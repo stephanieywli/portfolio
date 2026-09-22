@@ -13,11 +13,10 @@ export const PROJECTS: Project[] = [
   {
     year: 2026,
     feeling: "challenging",
-    title: "Entity Resolution Database",
+    title: "Paper Trail",
     description:
-      "a database of standardized company data and entities; aggregates lobbying, procurement, and ATIP records",
-    toast: "coming soon",
-    toastBg: "bg-orange-500",
+      "a database that uses AI & human review to standardize company names; trace an org's lobbying and contract activity here",
+    link: "https://theijf.org/paper-trail",
     stack: "SQL · Supabase · Next.js",
   },
   {
