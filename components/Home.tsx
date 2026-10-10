@@ -3,7 +3,15 @@
 import Link from "next/link";
 import useTypewriter from "@/utils/useTypewriter";
 
-const TRAITS = ["cat mom", "design nerd", "gym rat"];
+const TRAITS = [
+  "cat mom",
+  "whiskey drinker",
+  "design nerd",
+  "gym rat",
+  "mountain climber",
+  "RnB lover",
+  "grass toucher",
+];
 const SKILLS = ["typescript", "react", "python", "sql"];
 
 export const Home = () => {
@@ -38,13 +46,13 @@ export const Home = () => {
         <b className="font-semibold">born and based in:</b> toronto, CA
       </p>{" "}
       <p className="fade-up-item delay-5 text-sm font-semibold">
-        previously @{" "}
+        currently @{" "}
         <Link
-          href="https://theijf.org"
+          href="https://www.reactiv.ai/"
           className="font-normal text-sm"
           target="_blank"
         >
-          The Investigative Journalism Foundation
+          Reactiv
         </Link>
       </p>
     </>
